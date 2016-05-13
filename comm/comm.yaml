@@ -1,0 +1,18 @@
+host:
+  ipaddress: 
+    ipaddr1: 
+      ipaddr: 10.66.10.187
+      url: http://10.66.10.187:9090
+  username: 
+    user1: 
+      name: root
+    user2: 
+      name: node
+  password: 
+    passwd1: 
+      passwd: redhat
+    passwd2: 
+      passwd: test
+  rhevh_version: 
+    version36: 
+      version: "Red Hat Enterprise Virtualization Hypervisor 3.6"
