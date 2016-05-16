@@ -20,7 +20,8 @@ class TestLogin(Test):
 
     def setUp(self):
         self.ipaddr = self.params.get('ipaddr', "/*/ipaddr1/")
-        self.testurl = self.params.get('url', "/*/ipaddr1/")
+        self.port = self.params.get('port', '/*/ipaddr1/')
+        self.testurl = "http://%s:%s" % (self.ipaddr, self.port)
         self.username = self.params.get('name', "/*/user1/")
         self.passwd = self.params.get('passwd', "/*/passwd1/")
         self.rhevh_version = self.params.get('version', "/*/version36/")
