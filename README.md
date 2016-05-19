@@ -2,7 +2,7 @@ Install avocado
 ===============
 
 - Fedora
-    1. > sudo curl https://repos-avocadoproject.rhcloud.com/static/avocado-fedora.repo -o /etc/yum.repos.d/avocado.repo
+    1. '> sudo curl https://repos-avocadoproject.rhcloud.com/static/avocado-fedora.repo -o /etc/yum.repos.d/avocado.repo'
     2. > sudo dnf repolist avocado avocado-lts
     3. > sudo dnf install avocado
     
