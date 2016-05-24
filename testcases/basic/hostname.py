@@ -4,6 +4,7 @@ import re
 f = re.compile(".*/avocado-cockpit")
 sys.path.append(f.findall(os.path.abspath(
     os.path.abspath(os.path.dirname(__file__))))[0])
+import time
 from avocado import Test
 from avocado import main
 from libs import general
@@ -32,6 +33,7 @@ class TestHostname(Test):
         web_driver = self.web_driver
         web_driver.switch_to.parent_frame()
         web_driver.implicitly_wait(10)
+        time.sleep(1)
         web_driver.switch_to.frame("cockpit1:localhost/system")
         display_hostname = web_driver.find_element_by_id(
             "system_information_hostname_button").text

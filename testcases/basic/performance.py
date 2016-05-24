@@ -64,7 +64,7 @@ class PerformanceTest(Test):
         web_driver = self.web_driver
         web_driver.implicitly_wait(10)
         web_driver.switch_to.frame("cockpit1:localhost/system")
-        time.sleep(1)
+        time.sleep(2)
         display_profile = web_driver.find_element_by_css_selector(
             "td.button-location > div > button.btn.btn-default").text.strip()
         node_profile = self.performance_check_in_node()
@@ -82,7 +82,7 @@ class PerformanceTest(Test):
     def _test_change_performance(self):
         web_driver = self.web_driver
         self.change_performance_from_cockpit()
-        time.sleep(1)
+        time.sleep(2)
         display_profile = web_driver.find_element_by_css_selector(
             "td.button-location > div > button.btn.btn-default").text.strip()
         node_profile = self.performance_check_in_node()

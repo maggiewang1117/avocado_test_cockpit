@@ -49,7 +49,7 @@ class TestLogin(Test):
     def check_login_status(self, web_driver):
         web_driver = web_driver
         web_driver.implicitly_wait(10)
-        time.sleep(1)
+        time.sleep(2)
         current_user = web_driver.find_element_by_id("content-user-name").text
 
         if current_user.strip() == self.username:
