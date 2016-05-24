@@ -109,6 +109,5 @@ class TestLogin(Test):
         self.assertEqual(0, total_result, "Login test failed!")
 
 
-
 if __name__ == "__main__":
     main()

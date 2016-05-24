@@ -70,6 +70,16 @@ class EstabSSHConnect(object):
         conn = self.ssh_connect()
         stdin, stdout, stderr = conn.exec_command()
 
+    def get_profile(self):
+        conn = self.ssh_connect()
+        stdin, stdout, stderr = conn.exec_command("tuned-adm active")
+        profile_output = stdout.read()
+        try:
+            current_profile = profile_output.split(":")[1].strip()
+        except Exception:
+            current_profile = "none"
+        return current_profile
+
 class LoginCockpit(object):
     def __init__(self, ipaddr, username, passwd, port=9090):
         self.ipaddr = ipaddr

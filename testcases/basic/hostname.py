@@ -4,12 +4,9 @@ import re
 f = re.compile(".*/avocado-cockpit")
 sys.path.append(f.findall(os.path.abspath(
     os.path.abspath(os.path.dirname(__file__))))[0])
-import time
 from avocado import Test
 from avocado import main
 from libs import general
-from selenium.webdriver import Firefox
-from selenium.webdriver.common.keys import Keys
 
 
 class TestHostname(Test):
@@ -24,7 +21,7 @@ class TestHostname(Test):
         self.ipaddr = self.params.get('ipaddr')
         self.port = self.params.get('port')
         self.testurl = "http://%s:%s" % (self.ipaddr, self.port)
-        self.username = self.params.get('name', "/*/user1")
+        self.username = self.params.get('name', "/*/user1/")
         self.passwd = self.params.get('passwd', "/*/user1/")
         web_driver_obj = general.LoginCockpit(
             self.ipaddr, self.username, self.passwd, self.port)
