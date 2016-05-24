@@ -1,0 +1,21 @@
+performance:
+  !include : comm.yaml
+  profiles: !mux
+    porfile1:
+        option: balanced
+    profile2:
+        option: desktop
+    profile3:
+        option: latency-performance
+    profile4:
+        option: network-latency
+    profile5:
+        option: network-throughput
+    profile6:
+        option: powersave
+    profile7:
+        option: throughput-performance
+    profile8:
+        option: virtual-guest
+    profile9:
+        option: virtual-host
