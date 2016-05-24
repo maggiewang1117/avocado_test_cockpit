@@ -23,7 +23,7 @@ class TestLogin(Test):
         self.port = self.params.get('port', '/*/ipaddr1/')
         self.testurl = "http://%s:%s" % (self.ipaddr, self.port)
         self.username = self.params.get('name', "/*/user1/")
-        self.passwd = self.params.get('passwd', "/*/passwd1/")
+        self.passwd = self.params.get('passwd', "/*/user1/")
         self.rhevh_version = self.params.get('version', "/*/version36/")
         self.result = 0
 
@@ -106,7 +106,7 @@ class TestLogin(Test):
         total_result += self.check_server_name_in_login_page(f_driver)
         total_result += self.login(f_driver)
         f_driver.close()
-        return total_result
+        self.assertEqual(0, total_result, "Login test failed!")
 
 
 

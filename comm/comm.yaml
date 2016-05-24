@@ -1,18 +1,15 @@
 host:
-  ipaddress: 
+  ipaddress: !mux
     ipaddr1: 
       ipaddr: 10.66.8.112
       port: 9090
-  username: 
+  username:
     user1: 
       name: root
+      passwd: redhat
     user2: 
       name: node
-  password: 
-    passwd1: 
-      passwd: redhat
-    passwd2: 
       passwd: test
   rhevh_version: 
     version36: 
-      version: "Red Hat Enterprise Virtualization Hypervisor 3.6"
+      version: "RED HAT ENTERPRISE VIRTUALIZATION HYPERVISOR NG 3.6"

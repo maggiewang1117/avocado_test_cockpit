@@ -24,8 +24,8 @@ class TestHostname(Test):
         self.ipaddr = self.params.get('ipaddr')
         self.port = self.params.get('port')
         self.testurl = "http://%s:%s" % (self.ipaddr, self.port)
-        self.username = self.params.get('name', "/*/user1/")
-        self.passwd = self.params.get('passwd', "/*/passwd1/")
+        self.username = self.params.get('name', "/*/user1")
+        self.passwd = self.params.get('passwd', "/*/user1/")
         web_driver_obj = general.LoginCockpit(
             self.ipaddr, self.username, self.passwd, self.port)
         self.web_driver = web_driver_obj.run()
