@@ -4,6 +4,7 @@ import paramiko
 import re
 import sys
 import os
+import re
 from selenium.webdriver import Firefox
 from selenium.webdriver.common.keys import Keys
 
@@ -43,9 +44,27 @@ class EstabSSHConnect(object):
 
     def get_hostname(self):
         conn = self.ssh_connect()
-        stdin, stdout, stderr = conn.exec_command("hostname")
-        s_hostname = stdout.read()
-        return stdout.read()
+        stdin, stdout, stderr = conn.exec_command("hostnamectl")
+        hostname_output = stdout.read().strip()
+        f1 = re.compile("Static.*\n")
+        s_hostname = f1.findall(hostname_output)[0].split(":")[1].strip()
+        f2 = re.compile("Pretty.*\n")
+        try:
+            p_hostname = f2.findall(hostname_output)[0].split(":")[1].strip()
+        except Exception:
+            p_hostname = ""
+        f3 = re.compile("Transient.*\n")
+        try:
+            t_hostname = f3.findall(hostname_output)[0].split(":")[1].strip()
+        except Exception:
+            t_hostname = ""
+
+        if t_hostname == "" and p_hostname == "":
+            return s_hostname
+        elif p_hostname != "":
+            return "%s (%s)" % (p_hostname, s_hostname)
+        else:
+            return s_hostname
 
     def get_hardware(self):
         conn = self.ssh_connect()

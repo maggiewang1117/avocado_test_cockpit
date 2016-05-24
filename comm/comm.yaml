@@ -1,7 +1,7 @@
 host:
   ipaddress: 
     ipaddr1: 
-      ipaddr: 10.66.10.187
+      ipaddr: 10.66.8.112
       port: 9090
   username: 
     user1: 

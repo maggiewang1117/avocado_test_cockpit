@@ -61,7 +61,7 @@ class TestLogin(Test):
         return self.result
 
     def get_all_infos_in_server(self):
-    	self.ssh_login = general.EstabSSHConnect(
+        self.ssh_login = general.EstabSSHConnect(
             self.ipaddr, self.username, self.passwd)
         self.ssh_conn = self.ssh_login.ssh_connect()
         stdin, stdout, stderr = self.ssh_conn.exec_command("hostname")
@@ -108,5 +108,7 @@ class TestLogin(Test):
         f_driver.close()
         return total_result
 
+
+
 if __name__ == "__main__":
-	main()
+    main()

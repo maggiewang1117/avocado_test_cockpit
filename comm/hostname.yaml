@@ -1,0 +1,18 @@
+hostname:
+  !include : comm.yaml
+  hostname: !mux
+    hostname1: 
+          pretty: test1
+          real: test.redhat.com
+#    hostname2:
+#          pretty: ""
+#          real: test2.redhat.com
+#    hostname3:
+#          pretty: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+#          real: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+#    hostname4:
+#          pretty: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+#          real: test4.redhat.com
+#    hostname5:
+#          pretty: test
+#          real: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.redhat.com
